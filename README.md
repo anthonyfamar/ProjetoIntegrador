@@ -9,10 +9,10 @@
 # Nome do Projeto
 
 <!-- Substitua a seguinte imagem por uma logo do seu projeto -->
-<img src="img/logo.png" width="150px">
+<img src="img/logo_bc.png" width="150px">
 
 <!-- Substitua o seguinte parágrafo por um resumo do seu projeto: -->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+O sistema de controle de biblioteca escolar irá oferecer funcionalidades como o cadastro detalhado de livros, possibilitando o controle de empréstimos, reservas e devoluções. Os usuários, sejam alunos ou funcionários, podem facilmente interagir com o sistema, realizando consultas ao catálogo, efetuando empréstimos e monitorando o status de reservas. Sendo assim, contribuindo para uma gestão eficaz e organizada do ambiente bibliotecário na instituição educacional.
 
 ## Documentação
 
@@ -24,4 +24,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <!-- Coloque seu nome, uma foto sua e uma pequena bio sobre você na seguinte tabela: -->
 |  |  |
 |:-------------:|:------------------------------------------------------------:|
-|  <img src="img/profilepic.png" width="150px"></br> **Nome do Autor** | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
+|  <img src="img/profilepic.png" width="150px"></br> **Anthony Famar** | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
