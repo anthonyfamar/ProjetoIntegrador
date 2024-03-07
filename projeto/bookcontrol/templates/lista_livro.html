@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Cadastro de Livro</title>
+    <title>Lista de Livros</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #000002;">
@@ -58,57 +58,21 @@
         </div>
       </nav>
 
-      <main class="container mt-5">
-        <div class="row m-3 border p-3 align-items-center" style="background-color: #000002;"> 
-            <div class="col-md-6 offset-md-3">
-                <form method="POST" class="formCadastro">
-                    {% csrf_token %}
-                    <h1 class="mb-2 text-light" style="text-align:center">Cadastro de Livros</h1>
-                    <p class="text-light mb-4" style="text-align:center">Preencha os campos abaixo para cadastrar o livro.</p>
-
-                    <div class="row g-3 mb-3">
-                        <div class="col-sm">
-                            <label for="titulo" class="form-label text-light">Título do Livro:</label>
-                            <input type="text" class="form-control" name="titulo" placeholder="Digite o título do livro" autofocus="true" required>
-                        </div>
-                        <div class="col-sm-2">
-                            <label for="quantidade" class="form-label text-light">Quantidade:</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-
-                    <div class="mb-4">
-                      <label for="image" class="form-label text-light">Capa do Livro:</label>
-                      <input type="file" class="form-control" name="image" accept="image/*">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="autor" class="form-label text-light">Autor:</label>
-                        <input type="text" class="form-control" name="autor" placeholder="Digite o autor do livro" autofocus="true" required>
-                    </div>  
-
-                    <div class="mb-3">
-                        <label for="editora" class="form-label text-light">Editora:</label>
-                        <input type="text" class="form-control" name="editora" placeholder="Digite a auditora do livro" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="anoEdicao" class="form-label text-light">Ano Edição:</label>
-                        <input type="date" class="form-control" name="anoEdicao">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="sinopse" class="form-label text-light">Sinopse do livro:</label>
-                        <textarea class="form-control" name="sinopse" rows="2" placeholder="Digite uma sinopse"></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <button type="submit" value="Cadastrar" class="btn btn-primary">Cadastrar</button>
-                        <button type="reset" class="btn btn-secondary me-2">Limpar</button>
-                    </div>
-                </form>
+    <main class="container mt-5">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

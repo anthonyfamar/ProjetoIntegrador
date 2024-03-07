@@ -8,3 +8,6 @@ def cadastro_prof(request):
 
 def cadastro_livro(request):
     return render(request, 'cadastro_livro.html')
+
+def lista_livro(request):
+    return render(request, 'lista_livro.html')
