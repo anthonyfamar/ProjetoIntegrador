@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Bibliotecário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #000002;">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'logo_bc.png' %}" width="40" height="40" class="d-inline-block align-text-top">
+                <strong>BookControl</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="pagina_inicial">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="controle">Controle Bibliotecário</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Alunos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Aluno</a></li>
+                            <li><a class="dropdown-item" href="#">Lista de Alunos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Professores
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
+                            <li><a class="dropdown-item" href="#">Lista de Professores</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Livros
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="cadastro_livro">Cadastro de Livros</a></li>
+                            <li><a class="dropdown-item" href="lista_livro">Lista de Livros</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h1 class="display-4">Bem-vindo ao <span class="text-primary">BookControl</span>!</h1>
+            <p class="lead">Sua biblioteca organizada e fácil de gerenciar.</p>
+            <hr class="my-4">
+            <p>Explore nossos recursos e simplifique o controle bibliotecário.</p>
+
+            <div class="container mt-5  mb-3">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Controle Bibliotecário</h5>
+                                <p class="card-text">Gerencie empréstimos, reservas e devoluções.</p>
+                                <a href="controle" class="btn btn-primary">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Controle Bibliotecário</h5>
+                                <p class="card-text">Gerencie empréstimos, reservas e devoluções.</p>
+                                <a href="controle" class="btn btn-primary">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Controle Bibliotecário</h5>
+                                <p class="card-text">Gerencie empréstimos, reservas e devoluções.</p>
+                                <a href="controle" class="btn btn-primary">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Controle Bibliotecário</h5>
+                                <p class="card-text">Gerencie empréstimos, reservas e devoluções.</p>
+                                <a href="controle" class="btn btn-primary">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer mt-auto py-3">
+                <div class="container">
+                    <span class="text-muted">BookControl - Sistema de Controle Bibliotecário</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

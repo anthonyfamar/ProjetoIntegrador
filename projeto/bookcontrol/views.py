@@ -11,3 +11,9 @@ def cadastro_livro(request):
 
 def lista_livro(request):
     return render(request, 'lista_livro.html')
+
+def controle(request):
+    return render(request, 'controle.html')
+
+def pagina_inicial(request):
+    return render(request, 'pagina_inicial.html')

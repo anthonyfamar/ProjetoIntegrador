@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Bibliotecário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #000002;">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'logo_bc.png' %}" width="40" height="40" class="d-inline-block align-text-top">
+            <strong>BookControl</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="pagina_inicial" >Página Inicial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="controle" >Controle Bibliotecário</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Alunos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Aluno</a></li>
+                  <li><a class="dropdown-item" href="#">Lista de Alunos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Professores
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
+                  <li><a class="dropdown-item" href="#">Lista de Professores</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Livros
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="cadastro_livro">Cadastro de Livros</a></li>
+                  <li><a class="dropdown-item" href="lista_livro">Lista de Livros</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="container mt-5">
+        <div class="row m-3 p-3 align-items-center"> 
+            <div class="col-md-6 offset-md-3">
+                <form method="POST" class="formCadastro">
+                    {% csrf_token %}
+                    <div class="accordion mt-4" id="accordionPanelsStayOpenExample">
+                        <!-- Controle de Empréstimos -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="emprestimos-heading">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#emprestimos-collapse" aria-expanded="true" aria-controls="emprestimos-collapse">
+                              Controle de Empréstimos
+                            </button>
+                          </h2>
+                          <div id="emprestimos-collapse" class="accordion-collapse collapse show" aria-labelledby="emprestimos-heading">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <h5>Preencha os dados para realizar o empréstimo!</h5>
+                                    <label for="livroEmprestimo" class="form-label">Livro:</label>
+                                    <input type="text" class="form-control" id="livroEmprestimo" placeholder="Nome do Livro" required>
+                        
+                                    <label for="alunoEmprestimo" class="form-label mt-2">Aluno:</label>
+                                    <input type="text" class="form-control" id="alunoEmprestimo" placeholder="Nome do Aluno" required>
+                        
+                                    <button type="button" class="btn btn-primary mt-3">Realizar Empréstimo</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Controle de Reservas -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="reservas-heading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reservas-collapse" aria-expanded="false" aria-controls="reservas-collapse">
+                              Controle de Reservas
+                            </button>
+                          </h2>
+                          <div id="reservas-collapse" class="accordion-collapse collapse" aria-labelledby="reservas-heading">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <h3>Reservas</h3>
+                                    <label for="livroReserva" class="form-label">Livro:</label>
+                                    <input type="text" class="form-control" id="livroReserva" placeholder="Nome do Livro" required>
+                        
+                                    <label for="alunoReserva" class="form-label mt-2">Aluno:</label>
+                                    <input type="text" class="form-control" id="alunoReserva" placeholder="Nome do Aluno" required>
+                        
+                                    <button type="button" class="btn btn-warning mt-3">Realizar Reserva</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Controle de Devoluções -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="devolucoes-heading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devolucoes-collapse" aria-expanded="false" aria-controls="devolucoes-collapse">
+                              Controle de Devoluções
+                            </button>
+                          </h2>
+                          <div id="devolucoes-collapse" class="accordion-collapse collapse" aria-labelledby="devolucoes-heading">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <h3>Devoluções</h3>
+                                    <label for="livroDevolucao" class="form-label">Livro:</label>
+                                    <input type="text" class="form-control" id="livroDevolucao" placeholder="Nome do Livro" required>
+                        
+                                    <label for="alunoDevolucao" class="form-label mt-2">Aluno:</label>
+                                    <input type="text" class="form-control" id="alunoDevolucao" placeholder="Nome do Aluno" required>
+                        
+                                    <button type="button" class="btn btn-success mt-3">Realizar Devolução</button>
+                                </div>
+                              <!-- Adicione os campos e botões específicos para controle de devoluções aqui -->
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+        </main>
+      
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
