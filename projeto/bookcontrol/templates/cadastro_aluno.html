@@ -36,7 +36,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Alunos</a></li>
-                <li><a class="dropdown-item" href="#">Lista de Alunos</a></li>
+                <li><a class="dropdown-item" href="lista_aluno">Lista de Alunos</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -45,7 +45,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
-                <li><a class="dropdown-item" href="#">Lista de Professores</a></li>
+                <li><a class="dropdown-item" href="lista_prof">Lista de Professores</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -90,10 +90,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="senha" class="form-label text-light">Turno:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Selecione uma opção</option>
-                            <option value="1">Matutino</option>
+                        <label for="turno" class="form-label text-light">Turno:</label>
+                        <select class="form-select" name="turno" aria-label="Default select example">
+                            <option value="1" selected>Matutino</option>
                             <option value="2">Vespertino</option>
                             <option value="3">Noturno</option>
                           </select>

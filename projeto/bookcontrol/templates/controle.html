@@ -32,7 +32,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Aluno</a></li>
-                  <li><a class="dropdown-item" href="#">Lista de Alunos</a></li>
+                  <li><a class="dropdown-item" href="lista_aluno">Lista de Alunos</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -41,7 +41,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
-                  <li><a class="dropdown-item" href="#">Lista de Professores</a></li>
+                  <li><a class="dropdown-item" href="lista_prof">Lista de Professores</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -92,7 +92,19 @@
                                           <input type="date" class="form-control" name="dataEmprestimo" required>
 
                                           <label for="dataPrevistaDevolucao" class="form-label mt-2">Previsão para devolução:</label>
-                                          <input type="date" class="form-control" name="dataPrevistaDevolucao" placeholder="Nome do Aluno" required>
+                                          <input type="date" class="form-control" name="dataPrevistaDevolucao"  required>
+
+                                          <label for="serieturma" class="form-label mt-2">Série/Turma:</label>
+                                          <input type="text" class="form-control" name="serieturma" placeholder="Digite a série/turma" required>
+
+                                          <div class="mb-3">
+                                            <label for="turno" class="form-label">Turno:</label>
+                                            <select class="form-select" name="turno" aria-label="Default select example">
+                                                <option value="1" selected>Matutino</option>
+                                                <option value="2">Vespertino</option>
+                                                <option value="3">Noturno</option>
+                                              </select>
+                                          </div>
                                           
                                           <button type="button" class="btn btn-primary mt-3">Realizar Empréstimo</button>
                                       </div>
@@ -141,7 +153,7 @@
                                           <input type="text" class="form-control" name="nomeCompleto" placeholder="Nome Completo" required>
 
                                           <label for="dataDevolucao" class="form-label mt-2">Data da devolução:</label>
-                                          <input type="text" class="form-control" name="dataDevolucao" required>
+                                          <input type="date" class="form-control" name="dataDevolucao" required>
 
                                           <button type="button" class="btn btn-success mt-3">Realizar Devolução</button>
                                       </div>
