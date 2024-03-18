@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest, HttpResponseRedirect
-from .models import Aluno
+from .models import Aluno, Prof, Livro
+
+def index(request):
+    return HttpResponseRedirect('/pagina_inicial')
 
 
 def cadastro_aluno(request):
@@ -23,11 +26,50 @@ def cadastro_aluno(request):
     else:
         return HttpResponseBadRequest()
     
+
 def cadastro_prof(request):
-    return render(request, 'cadastro_prof.html')
+    if request.method == 'GET':
+        return render(request, 'cadastro_prof.html')
+    elif request.method == 'POST':
+        nome_completo = request.POST['nomeCompleto']
+        data_nascimento = request.POST['dataNascimento']
+        email = request.POST['email']
+        disciplina = request.POST['disciplina']
+        turno = request.POST['turno']
+        prof = Prof()
+        prof.nomeCompleto = nome_completo
+        prof.dataNascimento = data_nascimento
+        prof.email = email
+        prof.disciplina = disciplina
+        prof.turno = turno
+        prof.save()
+        return HttpResponseRedirect('/lista_prof')
+    else:
+        return HttpResponseBadRequest()
+
 
 def cadastro_livro(request):
-    return render(request, 'cadastro_livro.html')
+    if request.method == 'GET':
+        return render(request, 'cadastro_livro.html')
+    elif request.method == 'POST':
+        titulo = request.POST['titulo']
+        quantidade = request.POST['quantidade']
+        ##imagem = request.FILES['image']
+        editora = request.POST['editora']
+        ano_edicao = request.POST['anoEdicao']
+        sinopse = request.POST['sinopse']
+        livro = Livro()
+        livro.titulo = titulo
+        livro.quantidade = quantidade
+        ##livro.image = imagem
+        livro.editora = editora
+        livro.anoEdicao = ano_edicao
+        livro.sinopse = sinopse
+        livro.save()
+        return HttpResponseRedirect('/lista_livro')
+    else:
+        return HttpResponseBadRequest()
+
 
 def lista_livro(request):
     return render(request, 'lista_livro.html')
@@ -39,7 +81,11 @@ def pagina_inicial(request):
     return render(request, 'pagina_inicial.html')
 
 def lista_aluno(request):
-    return render(request, 'lista_aluno.html')
+    return render(request, 'lista_aluno.html', {
+        'alunos': Aluno.objects.all()
+    })
 
 def lista_prof(request):
-    return render(request, 'lista_prof.html')
+    return render(request, 'lista_prof.html', {
+        'profs': Prof.objects.all()
+    })
