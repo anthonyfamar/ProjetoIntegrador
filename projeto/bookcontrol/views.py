@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponseBadRequest, HttpResponseRedirect
-from .models import Aluno, Prof, Livro
+from django.http import HttpResponseBadRequest, HttpResponseRedirect, HttpResponse
+from .models import Aluno, Prof, Livro, Emprestimo, Reserva, Devolucao
+
+def sucesso(resquest):
+    return render(resquest, 'sucesso.html')
 
 def index(request):
     return HttpResponseRedirect('/pagina_inicial')
@@ -72,10 +75,61 @@ def cadastro_livro(request):
 
 
 def lista_livro(request):
-    return render(request, 'lista_livro.html')
+    return render(request, 'lista_livro.html', {
+        'livros': Livro.objects.all()
+    })
+
+
 
 def controle(request):
-    return render(request, 'controle.html')
+    if request.method == 'GET':
+        return render(request, 'controle.html')
+    elif request.method == 'POST':
+        if 'submit_emprestimo' in request.POST:
+            titulo = request.POST['titulo']
+            nome_completo = request.POST['nomeCompleto']
+            data_emprestimo = request.POST['dataEmprestimo']
+            previsao_devolucao = request.POST['dataPrevistaDevolucao']
+            serie_turma = request.POST['serieturma']
+            turno = request.POST['turno']
+            emprestimo = Emprestimo()
+            emprestimo.titulo = titulo
+            emprestimo.nomeCompleto = nome_completo
+            emprestimo.dataEmprestimo = data_emprestimo
+            emprestimo.dataPrevistaDevolucao = previsao_devolucao
+            emprestimo.serieturma = serie_turma
+            emprestimo.turno = turno
+            emprestimo.save()
+            
+        elif 'submit_reserva' in request.POST:
+            titulo = request.POST['titulo']
+            nome_completo = request.POST['nomeCompleto']
+            serie_turma = request.POST['serieturma']
+            turno = request.POST['turno']
+            reserva = Reserva()
+            reserva.titulo = titulo
+            reserva.nomeCompleto = nome_completo
+            reserva.serieturma = serie_turma
+            reserva.turno = turno
+            reserva.save()         
+            
+        elif 'submit_devolucao' in request.POST:
+            titulo = request.POST['titulo']
+            nome_completo = request.POST['nomeCompleto']
+            data_devolucao = request.POST['dataDevolucao']
+            devolucao = Devolucao()
+            devolucao.titulo = titulo
+            devolucao.nomeCompleto = nome_completo
+            devolucao.dataDevolucao = data_devolucao
+            devolucao.save()
+        else:
+            return HttpResponse('Fomulário desconhecido')
+        return HttpResponseRedirect('/pagina_inicial')
+    else:
+        return HttpResponseBadRequest()
+    
+
+
 
 def pagina_inicial(request):
     return render(request, 'pagina_inicial.html')

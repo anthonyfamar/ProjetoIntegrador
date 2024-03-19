@@ -39,6 +39,8 @@ class Reserva(models.Model):
     id = models.AutoField(primary_key=True)
     titulo = models.CharField(max_length=200)
     nomeCompleto = models.CharField(max_length=200)
+    serieturma = models.CharField(max_length=50)
+    turno = models.IntegerField(choices=[(1, 'Matutino'), (2, 'Vespertino'), (3, 'Noturno')])
 
 class Devolucao(models.Model):
     id = models.AutoField(primary_key=True)

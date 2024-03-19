@@ -58,24 +58,72 @@
         </div>
       </nav>
 
-    <main class="container mt-5">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small> 
-                    <button type="submit" class="btn btn-link float-end">Ver mais</button>
-                  </p>
+    <main class="mt-5 ms-5 me-5">
+      {% for livro in livros %}
+      <div class="row">
+        <div class="col-4">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{livro.titulo}}</h5>
+                            <p class="card-text">{{livro.sinopse|truncatewords:40}}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Last updated 3 mins ago</small> 
+                                <button type="submit" class="btn btn-link float-end">Ver mais</button>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+        {% endfor %}
+
+        <div class="col-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">
+                                <small class="text-muted">Last updated 3 mins ago</small> 
+                                <button type="submit" class="btn btn-link float-end">Ver mais</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">
+                                <small class="text-muted">Last updated 3 mins ago</small> 
+                                <button type="submit" class="btn btn-link float-end">Ver mais</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+      </div>
+
+          
           <footer class="footer mt-auto py-3">
             <div class="container text-center">
                 <span class="text-muted">BookControl - Sistema de Controle Bibliotecário</span>

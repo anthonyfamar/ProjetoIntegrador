@@ -12,5 +12,6 @@ urlpatterns = [
     path('controle', views.controle),
     path('pagina_inicial', views.pagina_inicial),
     path('lista_aluno', views.lista_aluno),
-    path('lista_prof', views.lista_prof)
+    path('lista_prof', views.lista_prof),
+    path('sucesso', views.sucesso)
 ]

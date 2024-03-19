@@ -117,7 +117,7 @@
                                                 </select>
                                             </div>
 
-                                            <button type="button" class="btn btn-primary mt-3">Realizar Empréstimo</button>
+                                            <button type="button" class="btn btn-primary mt-3" name="submit_emprestimo">Realizar Empréstimo</button>
                                         </div>
                                     </div>
                                 </div>
@@ -149,8 +149,22 @@
                                             <label for="nomeCompleto" class="form-label mt-2">Nome Completo:</label>
                                             <input type="text" class="form-control" name="nomeCompleto"
                                                    placeholder="Nome Completo" required>
+                                                   
+                                            <label for="serieturma" class="form-label mt-2">Série/Turma:</label>
+                                            <input type="text" class="form-control" name="serieturma"
+                                                   placeholder="Digite a série/turma" required>
 
-                                            <button type="button" class="btn btn-warning mt-3">Realizar Reserva</button>
+                                            <div class="mb-3">
+                                                <label for="turno" class="form-label">Turno:</label>
+                                                <select class="form-select" name="turno"
+                                                        aria-label="Default select example">
+                                                    <option value="1" selected>Matutino</option>
+                                                    <option value="2">Vespertino</option>
+                                                    <option value="3">Noturno</option>
+                                                </select>
+                                            </div>
+
+                                            <button type="button" class="btn btn-warning mt-3" name="submit_reserva">Realizar Reserva</button>
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +200,7 @@
                                             <label for="dataDevolucao" class="form-label mt-2">Data da devolução:</label>
                                             <input type="date" class="form-control" name="dataDevolucao" required>
 
-                                            <button type="button" class="btn btn-success mt-3">Realizar Devolução</button>
+                                            <button type="button" class="btn btn-success mt-3" name="submit_devolucao   ">Realizar Devolução</button>
                                         </div>
                                     </div>
                                 </div>
