@@ -13,5 +13,6 @@ urlpatterns = [
     path('pagina_inicial', views.pagina_inicial),
     path('lista_aluno', views.lista_aluno),
     path('lista_prof', views.lista_prof),
-    path('sucesso', views.sucesso)
+    path('sucesso', views.sucesso),
+    path('info_livro', views.info_livro)
 ]

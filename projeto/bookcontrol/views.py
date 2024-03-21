@@ -2,11 +2,33 @@ from django.shortcuts import render
 from django.http import HttpResponseBadRequest, HttpResponseRedirect, HttpResponse
 from .models import Aluno, Prof, Livro, Emprestimo, Reserva, Devolucao
 
+def info_livro(request):
+    return render(request, 'info_livro.html')
+
 def sucesso(resquest):
     return render(resquest, 'sucesso.html')
 
 def index(request):
     return HttpResponseRedirect('/pagina_inicial')
+
+def pagina_inicial(request):
+    return render(request, 'pagina_inicial.html')
+
+def lista_aluno(request):
+    return render(request, 'lista_aluno.html', {
+        'alunos': Aluno.objects.all()
+    })
+
+def lista_prof(request):
+    return render(request, 'lista_prof.html', {
+        'profs': Prof.objects.all()
+    })
+
+def lista_livro(request):
+    return render(request, 'lista_livro.html', {
+        'livros': Livro.objects.all()
+    })
+
 
 
 def cadastro_aluno(request):
@@ -30,6 +52,7 @@ def cadastro_aluno(request):
         return HttpResponseBadRequest()
     
 
+
 def cadastro_prof(request):
     if request.method == 'GET':
         return render(request, 'cadastro_prof.html')
@@ -49,6 +72,7 @@ def cadastro_prof(request):
         return HttpResponseRedirect('/lista_prof')
     else:
         return HttpResponseBadRequest()
+
 
 
 def cadastro_livro(request):
@@ -72,12 +96,6 @@ def cadastro_livro(request):
         return HttpResponseRedirect('/lista_livro')
     else:
         return HttpResponseBadRequest()
-
-
-def lista_livro(request):
-    return render(request, 'lista_livro.html', {
-        'livros': Livro.objects.all()
-    })
 
 
 
@@ -124,22 +142,6 @@ def controle(request):
             devolucao.save()
         else:
             return HttpResponse('Fomulário desconhecido')
-        return HttpResponseRedirect('/pagina_inicial')
+        return HttpResponseRedirect('/sucesso')
     else:
         return HttpResponseBadRequest()
-    
-
-
-
-def pagina_inicial(request):
-    return render(request, 'pagina_inicial.html')
-
-def lista_aluno(request):
-    return render(request, 'lista_aluno.html', {
-        'alunos': Aluno.objects.all()
-    })
-
-def lista_prof(request):
-    return render(request, 'lista_prof.html', {
-        'profs': Prof.objects.all()
-    })
