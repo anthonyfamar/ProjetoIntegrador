@@ -20,7 +20,7 @@ class Livro(models.Model):
     id = models.AutoField(primary_key=True)
     titulo = models.CharField(max_length=200)
     quantidade = models.IntegerField()
-    #image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/')
     autor = models.CharField(max_length=200)
     editora = models.CharField(max_length=200)
     anoEdicao = models.IntegerField()

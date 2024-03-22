@@ -37,8 +37,8 @@
                 Alunos
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink ">
-                <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Aluno</a></li>
-                <li><a class="dropdown-item" href="lista_aluno">Lista de Alunos</a></li>
+                <li><a class="dropdown-item" href="/cadastro_aluno">Cadastro de Aluno</a></li>
+                <li><a class="dropdown-item" href="/lista_aluno">Lista de Alunos</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -46,8 +46,8 @@
                 Professores
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
-                <li><a class="dropdown-item" href="lista_prof">Lista de Professores</a></li>
+                <li><a class="dropdown-item" href="/cadastro_prof">Cadastro de Professores</a></li>
+                <li><a class="dropdown-item" href="/lista_prof">Lista de Professores</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -55,8 +55,8 @@
                 Livros
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="cadastro_livro">Cadastro de Livros</a></li>
-                <li><a class="dropdown-item" href="lista_livro">Lista de Livros</a></li>
+                <li><a class="dropdown-item" href="/cadastro_livro">Cadastro de Livros</a></li>
+                <li><a class="dropdown-item" href="/lista_livro">Lista de Livros</a></li>
               </ul>
             </li>
           </ul>
@@ -74,32 +74,32 @@
                         <div class="row">
                             <div class="col-md-4 text-center">
                                 <!-- Imagem da capa do livro -->
-                                <img src="{% static 'logo_bc.png' %}" class="img-fluid rounded w-100" alt="Capa do Livro">
+                                <img src="{{livro.image.url}}" class="img-fluid rounded w-100" alt="Capa do Livro">
                             </div>
                             <div class="col-md-8">
                                 <!-- Título do livro -->
                                 <div class="text-center">
-                                    <h2 class="card-title mb-3">Título do Livro</h2>
+                                    <h2 class="card-title mb-3">{{livro.titulo}}</h2>
                                     <hr>
                                 </div>
                                 <!-- Autor -->
-                                <p class="card-text"><strong>Autor:</strong> Nome do Autor</p>
+                                <p class="card-text"><strong>Autor:</strong> {{livro.autor}}</p>
                                 <!-- Editora -->
-                                <p class="card-text"><strong>Editora:</strong> Nome da Editora</p>
+                                <p class="card-text"><strong>Editora:</strong> {{livro.editora}}</p>
                                 <!-- Ano da edição -->
-                                <p class="card-text"><strong>Ano da Edição:</strong> 2023</p>
+                                <p class="card-text"><strong>Ano da Edição:</strong> {{livro.anoEdicao}}</p>
                                 <!-- Quantidade -->
-                                <p class="card-text"><strong>Quantidade Disponível:</strong> 10</p>
+                                <p class="card-text"><strong>Quantidade Disponível:</strong>{{livro.quantidade}}</p>
                                 <hr>
                                 <!-- Sinopse do livro -->
                                 <p class="card-text"><strong>Sinopse:</strong></p>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sit amet felis consequat sodales. Nullam consequat vehicula justo vel pellentesque.</p>
+                                <p class="card-text">{{livro.sinopse}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer bg-light">
                         <div class="text-end">
-                            <a href="lista_livro" class="btn btn-primary" style="background-color: #0000b4; border-color: #0000b4;">Voltar</a>
+                            <a href="/lista_livro" class="btn btn-primary" style="background-color: #0000b4; border-color: #0000b4;">Voltar</a>
                         </div>
                     </div>
                 </div>

@@ -65,7 +65,7 @@
       <main class="container mt-5">
         <div class="row m-3 border p-3 align-items-center" style="background-color: #000002;"> 
             <div class="col-md-6 offset-md-3">
-                <form method="POST" class="formCadastro">
+                <form method="POST" class="formCadastro" enctype="multipart/form-data">
                     {% csrf_token %}
                     <h1 class="mb-2 text-light" style="text-align:center">Cadastro de Livros</h1>
                     <p class="text-light mb-4" style="text-align:center">Preencha os campos abaixo para cadastrar o livro.</p>
@@ -98,7 +98,7 @@
 
                     <div class="mb-3">
                         <label for="anoEdicao" class="form-label text-light">Ano Edição:</label>
-                        <input type="date" class="form-control" name="anoEdicao">
+                        <input type="number" class="form-control" name="anoEdicao">
                     </div>
 
                     <div class="mb-3">

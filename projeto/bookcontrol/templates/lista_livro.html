@@ -1,137 +1,118 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Lista de Livros</title>
-    <link rel="icon" href="{% static 'logo_bc.png' %}" type="image/x-icon">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #000002;">
-        <div class="container-fluid ">
-          <a class="navbar-brand" href="#">
-            <img src="{% static 'logo_bc.png' %}" width="40" height="40" class="d-inline-block align-text-top">
-            <strong>BookControl</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="pagina_inicial" >Página Inicial</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Alunos
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Aluno</a></li>
-                  <li><a class="dropdown-item" href="lista_aluno">Lista de Alunos</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Professores
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
-                  <li><a class="dropdown-item" href="lista_prof">Lista de Professores</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Livros
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="cadastro_livro">Cadastro de Livros</a></li>
-                  <li><a class="dropdown-item" href="lista_livro">Lista de Livros</a></li>
-                </ul>
-              </li>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Lista de Livros</title>
+  <link rel="icon" href="{% static 'logo_bc.png' %}" type="image/x-icon">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #000002;">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'logo_bc.png' %}" width="40" height="40" class="d-inline-block align-text-top">
+        <strong>BookControl</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="pagina_inicial">Página Inicial</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Alunos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="cadastro_aluno">Cadastro de Aluno</a></li>
+              <li><a class="dropdown-item" href="lista_aluno">Lista de Alunos</a></li>
             </ul>
-        </div>
-      </nav>
-
-    <main class="mt-5 ms-5 me-5">
-      {% for livro in livros %}
-      <div class="row">
-        <div class="col-4">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{livro.titulo}}</h5>
-                            <p class="card-text">{{livro.sinopse|truncatewords:40}}</p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small> 
-                                <button type="submit" class="btn btn-link float-end">Ver mais</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-        <div class="col-4">
-            <div class="card mb-3">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small> 
-                                <button type="submit" class="btn btn-link float-end">Ver mais</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="card mb-3">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small> 
-                                <button type="submit" class="btn btn-link float-end">Ver mais</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Professores
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="cadastro_prof">Cadastro de Professores</a></li>
+              <li><a class="dropdown-item" href="lista_prof">Lista de Professores</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Livros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="cadastro_livro">Cadastro de Livros</a></li>
+              <li><a class="dropdown-item" href="lista_livro">Lista de Livros</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
+  </nav>
 
-          
-          <footer class="footer mt-auto py-3">
-            <div class="container text-center">
-                <span class="text-muted">BookControl - Sistema de Controle Bibliotecário</span>
+      <main class="container-fluid">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-geral" role="tabpanel" aria-labelledby="nav-geral-tab" tabindex="0">
+                <section class="container-fluid mt-4 mb-4">
+                    <div class="row">
+    
+                        {% for livro in livros %}
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card" style="max-width: 540px;"> 
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{livro.image.url}}" class="img-fluid rounded-start">
+                                        </div>
+    
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h4 class="card-title text-info mb-3">{{livro.titulo }}</h4>
+                                                <p class="card-text mb-0">{{ livro.sinopse | truncatewords:20 }}</p>
+                                                <form method="post" action="info_livro/{{livro.id}}">
+                                                  {% csrf_token %}
+                                                  <small class="text-muted">Last updated X mins ago</small>
+                                                  <button type="submit" class="btn btn-link float-end">Ler mais</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+    
+                    </div>
+                </section>
             </div>
-          </footer>
+    </div> 
+    ,</div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+
+      <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+          <span class="text-muted">BookControl - Sistema de Controle Bibliotecário</span>
+        </div>
+      </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

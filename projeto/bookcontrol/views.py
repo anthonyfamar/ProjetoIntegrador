@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponseBadRequest, HttpResponseRedirect, HttpResponse
 from .models import Aluno, Prof, Livro, Emprestimo, Reserva, Devolucao
 
-def info_livro(request):
-    return render(request, 'info_livro.html')
+def info_livro(request, livro_id):
+    livro = Livro.objects.get(id=livro_id)
+    return render(request, 'info_livro.html', {'livro': livro})
 
 def sucesso(resquest):
     return render(resquest, 'sucesso.html')
@@ -81,14 +82,16 @@ def cadastro_livro(request):
     elif request.method == 'POST':
         titulo = request.POST['titulo']
         quantidade = request.POST['quantidade']
-        ##imagem = request.FILES['image']
+        autor = request.POST['autor']
+        imagem = request.FILES['image']
         editora = request.POST['editora']
         ano_edicao = request.POST['anoEdicao']
         sinopse = request.POST['sinopse']
         livro = Livro()
         livro.titulo = titulo
         livro.quantidade = quantidade
-        ##livro.image = imagem
+        livro.autor = autor
+        livro.image = imagem
         livro.editora = editora
         livro.anoEdicao = ano_edicao
         livro.sinopse = sinopse

@@ -2,6 +2,8 @@
 from django.contrib import admin
 from django.urls import path
 from bookcontrol import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index),
@@ -14,5 +16,8 @@ urlpatterns = [
     path('lista_aluno', views.lista_aluno),
     path('lista_prof', views.lista_prof),
     path('sucesso', views.sucesso),
-    path('info_livro', views.info_livro)
+    path('info_livro/<int:livro_id>', views.info_livro, name='info_livro')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
